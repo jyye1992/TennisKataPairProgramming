@@ -51,6 +51,17 @@ class TennisTest extends TestCase
         $this->scoreShouldBe('forty-love');
     }
 
+    /**
+     * @test
+     */
+    public function thirty_all()
+    {
+        $this->givenFirstPlayerWinPoint(3);
+        $this->givenSecondPlayerWinPoint(3);
+        $this->scoreShouldBe('thirty-all');
+    }
+
+
 
     /**
      * @test
