@@ -27,6 +27,8 @@ class Tennis
 
         if ($this->firstPlayerPoint == 1 && $this->secondPlayerPoint == 1) {
             return 'fifteen-all';
+        } elseif ($this->firstPlayerPoint == 2 && $this->secondPlayerPoint == 2) {
+            return 'thirty-all';
         }
 
         if ($this->firstPlayerPoint > 0) {
