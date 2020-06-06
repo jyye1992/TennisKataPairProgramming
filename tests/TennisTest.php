@@ -10,6 +10,12 @@ class TennisTest extends TestCase
 {
     private $tennis;
 
+    protected function setUp()
+    {
+        $this->tennis = $tennis = new Tennis();
+        parent::setUp();
+    }
+
     /**
      * @test
      */
@@ -18,13 +24,12 @@ class TennisTest extends TestCase
         $this->scoreShouldBe('love-all');
     }
 
-
     /**
      * @test
      */
     public function fifteen_love()
     {
-        $this->givenFirstPlayerWinPoint( 1);
+        $this->givenFirstPlayerWinPoint(1);
         $this->scoreShouldBe('fifteen-love');
     }
 
@@ -33,22 +38,25 @@ class TennisTest extends TestCase
      */
     public function fifteen_all()
     {
-        $this->givenFirstPlayerWinPoint( 1);
-        $this->tennis->secondPlayerWinPoint(1);
+        $this->givenFirstPlayerWinPoint(1);
+        $this->givenSecondPlayerWinPoint(1);
 
         $this->scoreShouldBe('fifteen-all');
     }
 
 
-    protected function setUp()
-    {
-        $this->tennis = $tennis = new Tennis();
-        parent::setUp();
-    }
 
     private function scoreShouldBe($expected): void
     {
         $this->assertEquals($expected, $this->tennis->score());
+    }
+
+    /**
+     * @param $point
+     */
+    private function givenSecondPlayerWinPoint($point): void
+    {
+        $this->tennis->secondPlayerWinPoint($point);
     }
 
     /**
