@@ -46,6 +46,16 @@ class TennisTest extends TestCase
     /**
      * @test
      */
+    public function deuce_4v4()
+    {
+        $this->givenFirstPlayerWinPoint(4);
+        $this->givenSecondPlayerWinPoint(4);
+        $this->scoreShouldBe('Deuce');
+    }
+
+    /**
+     * @test
+     */
     public function love_forty()
     {
         $this->givenSecondPlayerWinPoint(3);

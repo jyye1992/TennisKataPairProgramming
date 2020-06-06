@@ -26,7 +26,7 @@ class Tennis
     public function score()
     {
         if ($this->isSamePoint()) {
-            if ($this->firstPlayerPoint == 3) {
+            if ($this->firstPlayerPoint >= 3) {
                 return 'Deuce';
             }
             return $this->lookUp[$this->firstPlayerPoint] . '-all';
