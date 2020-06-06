@@ -33,7 +33,7 @@ class Tennis
             return $this->lookUp[$this->firstPlayerPoint] . '-love';
         }
 
-        return 'love-fifteen';
+        return 'love-' . $this->lookUp[$this->secondPlayerPoint];
     }
 
     private function isSamePoint()
