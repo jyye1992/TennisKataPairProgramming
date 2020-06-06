@@ -28,6 +28,18 @@ class TennisTest extends TestCase
         $this->scoreShouldBe('fifteen-love');
     }
 
+    /**
+     * @test
+     */
+    public function fifteen_all()
+    {
+        $this->givenFirstPlayerWinPoint( 1);
+        $this->tennis->secondPlayerWinPoint(1);
+
+        $this->scoreShouldBe('fifteen-all');
+    }
+
+
     protected function setUp()
     {
         $this->tennis = $tennis = new Tennis();
