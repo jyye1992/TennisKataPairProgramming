@@ -14,11 +14,11 @@ class TennisTest extends TestCase
     public function love_all()
     {
         $tennis = new Tennis();
-        $score = $tennis->score(0, 0);
+        $actual = $tennis->score();
 
         $expected = 'love-all';
 
-        $this->assertEquals($expected, $score);
+        $this->assertEquals($expected, $actual);
     }
 
 }
