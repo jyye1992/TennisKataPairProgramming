@@ -17,6 +17,7 @@ class Tennis
     private $secondPlayerPoint = 0;
 
     private $lookUp = [
+        0 => 'love',
         1 => 'fifteen',
         2 => 'thirty',
         3 => 'forty',
@@ -24,6 +25,9 @@ class Tennis
 
     public function score()
     {
+//        if ($this->firstPlayerPoint == $this->secondPlayerPoint) {
+//            return $this->lookUp[$this->firstPlayerPoint] . '-all';
+//        }
 
         if ($this->firstPlayerPoint == 1 && $this->secondPlayerPoint == 1) {
             return 'fifteen-all';
