@@ -28,7 +28,7 @@ class TennisTest extends TestCase
      */
     public function fifteen_love()
     {
-        $expected = 'fifteen-all';
+        $expected = 'fifteen-love';
         $tennis = new Tennis();
 
         $tennis->firstPlayerWinPoint(1);
