@@ -19,6 +19,7 @@ class Tennis
     private $lookUp = [
         1 => 'fifteen',
         2 => 'thirty',
+        3 => 'forty',
     ];
 
     public function score()
