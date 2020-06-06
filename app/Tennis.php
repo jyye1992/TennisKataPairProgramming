@@ -9,7 +9,7 @@ class Tennis
     /**
      * @var int
      */
-    private $firstPlayerPoint;
+    private $firstPlayerPoint = 0;
 
     /**
      * @var int
@@ -25,9 +25,9 @@ class Tennis
 
     public function score()
     {
-//        if ($this->firstPlayerPoint == $this->secondPlayerPoint) {
-//            return $this->lookUp[$this->firstPlayerPoint] . '-all';
-//        }
+        if ($this->firstPlayerPoint == $this->secondPlayerPoint) {
+            return $this->lookUp[$this->firstPlayerPoint] . '-all';
+        }
 
         if ($this->firstPlayerPoint == 1 && $this->secondPlayerPoint == 1) {
             return 'fifteen-all';
