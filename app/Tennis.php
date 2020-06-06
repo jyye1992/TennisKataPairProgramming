@@ -25,13 +25,18 @@ class Tennis
 
     public function score()
     {
-        if ($this->firstPlayerPoint == $this->secondPlayerPoint) {
+        if ($this->isSamePoint()) {
             return $this->lookUp[$this->firstPlayerPoint] . '-all';
         }
 
         if ($this->firstPlayerPoint > 0) {
             return $this->lookUp[$this->firstPlayerPoint] . '-love';
         }
+    }
+
+    private function isSamePoint()
+    {
+        return $this->firstPlayerPoint == $this->secondPlayerPoint;
     }
 
     public function firstPlayerWinPoint(int $point)
