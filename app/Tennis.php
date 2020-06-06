@@ -6,6 +6,9 @@ namespace App;
 
 class Tennis
 {
+    /**
+     * @var int
+     */
     private $firstPlayerPoint;
     /**
      * @var int
@@ -25,7 +28,7 @@ class Tennis
         return 'love-all';
     }
 
-    public function firstPlayerWinPoint($point)
+    public function firstPlayerWinPoint(int $point)
     {
         $this->firstPlayerPoint = $point;
     }
