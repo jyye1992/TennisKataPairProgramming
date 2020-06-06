@@ -10,13 +10,18 @@ class Tennis
      * @var int
      */
     private $firstPlayerPoint;
+
     /**
      * @var int
      */
-    private $secondPlayerPoint;
+    private $secondPlayerPoint = 0;
 
     public function score()
     {
+        if ($this->firstPlayerPoint == 2) {
+            return 'thirty-love';
+        }
+
         if ($this->firstPlayerPoint == 1 && $this->secondPlayerPoint == 1) {
             return 'fifteen-all';
         }
