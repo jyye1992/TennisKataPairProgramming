@@ -47,7 +47,7 @@ class TennisTest extends TestCase
      */
     public function forty_love()
     {
-        $this->givenFirstPlayerWinPoint(3());
+        $this->givenFirstPlayerWinPoint(3);
         $this->scoreShouldBe('forty-love');
     }
 
