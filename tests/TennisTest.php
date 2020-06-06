@@ -8,18 +8,14 @@ use PHPUnit\Framework\TestCase;
 
 class TennisTest extends TestCase
 {
+    private $tennis;
 
     /**
      * @test
      */
     public function love_all()
     {
-        $expected = 'love-all';
-        $tennis = new Tennis();
-
-        $actual = $tennis->score();
-
-        $this->assertEquals($expected, $actual);
+        $this->scoreShouldBe('love-all');
     }
 
 
@@ -28,14 +24,26 @@ class TennisTest extends TestCase
      */
     public function fifteen_love()
     {
-        $expected = 'fifteen-love';
-        $tennis = new Tennis();
-
-        $tennis->firstPlayerWinPoint(1);
-        $actual = $tennis->score();
-
-        $this->assertEquals($expected, $actual);
+        $this->givenFirstPlayerWinPoint( 1);
+        $this->scoreShouldBe('fifteen-love');
     }
 
+    protected function setUp()
+    {
+        $this->tennis = $tennis = new Tennis();
+        parent::setUp();
+    }
 
+    private function scoreShouldBe($expected): void
+    {
+        $this->assertEquals($expected, $this->tennis->score());
+    }
+
+    /**
+     * @param $point
+     */
+    private function givenFirstPlayerWinPoint($point): void
+    {
+        $this->tennis->firstPlayerWinPoint($point);
+    }
 }
